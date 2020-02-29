@@ -1,0 +1,25 @@
+server:
+  port: 8080
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+zuul:
+  prefix:
+  routes:
+    blogApi:
+      serviceId: blog-service
+    postApi:
+      serviceId: post-service
+    commentApi:
+      serviceId: comment-service
+# Increase the Hystrix timeout to 60s (for all)
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 60000
+        timeout:
+          enable: false
