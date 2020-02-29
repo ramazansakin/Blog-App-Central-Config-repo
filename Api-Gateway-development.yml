@@ -7,11 +7,11 @@ eureka:
 zuul:
   prefix:
   routes:
-    blogApi:
+    blog-service:
       serviceId: blog-service
-    postApi:
+    post-service:
       serviceId: post-service
-    commentApi:
+    comment-service:
       serviceId: comment-service
 # Increase the Hystrix timeout to 60s (for all)
 hystrix:
